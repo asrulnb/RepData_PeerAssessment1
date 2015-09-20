@@ -104,6 +104,11 @@ nrow(DS) - nrow(na.omit(DS))
 ```
 
 2. Filling missing data
+- We are going to use the avePatern Dataset calculated previously to replace the missing Data
+     - For each missing data (denoted by NA) in the DS dataset, we will determine which 5 minute interval during the day it belongs to
+     - We will then look up the Average Step in the avePatern Dataset and use that value to replace the missing value
+     - We will create a new Dataset DS.fill to hold the modified DS Dataset value
+     - DS.fill will be used for calculations henceforth
 ```{r part3.fill missing data}
 
 DS.fill <- DS
